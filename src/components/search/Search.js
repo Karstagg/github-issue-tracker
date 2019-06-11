@@ -8,21 +8,21 @@ export default class Search extends Component {
   constructor() {
     super();
     this.state = {
-      repos: [],
+      issues: [],
       loading: true
     };
   }
 
   componentDidMount() {
-    this.performSearch();
+    //this.search();
   }
 
-  performSearch = (query = 'web') => {
-    axios.get(`https://api.github.com/search/repositories?q=${query}`)
+  search = (query = 'web') => {
+    axios.get(`https://api.github.com/search/issues?q=${query}`)
       .then(response => {
         this.setState({
           query: query,
-          repos: response.data.items,
+          issues: response.data.items,
           loading: false
         });
       })
@@ -37,8 +37,7 @@ export default class Search extends Component {
       <div>
         <div className="main-header">
           <div className="inner">
-            <h1 className="main-title">Search</h1>
-            <SearchForm onSearch={this.performSearch} />
+            <SearchForm onSearch={this.search} />
           </div>
         </div>
         <div className="main-content">

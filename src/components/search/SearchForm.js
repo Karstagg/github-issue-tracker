@@ -2,9 +2,14 @@ import React, { Component } from 'react';
 
 export default class SearchForm extends Component {
 
-  state = {
-    searchText: ''
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchText: ''
+    };
+    console.log(this.props)
   }
+
 
   onSearchChange = e => {
     this.setState({ searchText: e.target.value });
