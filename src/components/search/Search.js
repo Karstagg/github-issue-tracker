@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import axios from 'axios';
+import SearchForm from "./SearchForm"
 
 export default class Search extends Component {
 
@@ -17,7 +18,7 @@ export default class Search extends Component {
   }
 
   performSearch = (query = 'web') => {
-    axios.get(`https://api.github.com/search/repositories?q=tetris+language:assembly&sort=stars&order=desc`)
+    axios.get(`https://api.github.com/search/repositories?q=${query}`)
       .then(response => {
         this.setState({
           query: query,
@@ -37,6 +38,7 @@ export default class Search extends Component {
         <div className="main-header">
           <div className="inner">
             <h1 className="main-title">Search</h1>
+            <SearchForm onSearch={this.performSearch} />
           </div>
         </div>
         <div className="main-content">
