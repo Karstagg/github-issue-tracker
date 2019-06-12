@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import "../../css/styles.css"
 export default class SearchForm extends Component {
 
   constructor(props) {
@@ -23,14 +23,12 @@ export default class SearchForm extends Component {
 
   render() {
     return (
-      <form className="search-form" onSubmit={this.handleSubmit} >
-        <label className="is-hidden" htmlFor="search">Search</label>
-        <input type="search"
+      <form onSubmit={this.handleSubmit} >
+        <input className="search-input" type="search"
                onChange={this.onSearchChange}
                name="search"
                ref={(input) => this.query = input}
                placeholder="Search..." />
-
       </form>
     );
   }
