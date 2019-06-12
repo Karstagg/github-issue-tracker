@@ -28,7 +28,11 @@ export default class Search extends Component {
           loading: false
         });
       }).then(() => {
-        navigate('/page-2/')
+        navigate('/page-2/',
+          {
+            state: this.state
+          }
+        )
     })
       .catch(error => {
         console.log('Error fetching and parsing data', error);
@@ -36,7 +40,6 @@ export default class Search extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div className="search-form">
             <SearchForm onSearch={this.search} />

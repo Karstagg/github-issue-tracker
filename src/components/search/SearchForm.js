@@ -10,7 +10,6 @@ export default class SearchForm extends Component {
     console.log(this.props)
   }
 
-
   onSearchChange = e => {
     this.setState({ searchText: e.target.value });
   }
