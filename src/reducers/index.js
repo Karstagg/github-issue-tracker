@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux';
-
+import issues from '../reducers/issues';
 
 const combinedReducer = combineReducers({
   //sub reducers go here

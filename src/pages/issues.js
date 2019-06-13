@@ -4,7 +4,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Issue from "../components/issue"
 import "../css/styles.css"
-export default class Issues extends Component {
+import {connect} from "react-redux"
+class Issues extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -46,3 +47,9 @@ export default class Issues extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    issues: state.issues
+  }
+}
+export default connect(mapStateToProps)(Issues)

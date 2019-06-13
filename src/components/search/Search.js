@@ -4,8 +4,10 @@ import axios from 'axios';
 import SearchForm from "./SearchForm"
 import "../../css/styles.css"
 import { navigate } from "gatsby"
+import { connect } from 'react-redux';
+import {setIssues} from "../../actions/issue";
 
-export default class Search extends Component {
+class Search extends Component {
 
   constructor() {
     super();
@@ -22,6 +24,7 @@ export default class Search extends Component {
   search = (query = 'web') => {
     axios.get(`https://api.github.com/search/issues?q=${query}`)
       .then(response => {
+        this.props.setIssues(response.data.items)
         this.setState({
           query: query,
           issues: response.data.items,
@@ -48,3 +51,15 @@ export default class Search extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setIssues: issues => dispatch(setIssues(issues)),
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Search)
