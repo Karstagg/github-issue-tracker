@@ -3,7 +3,7 @@ import {
 } from '../actions/issue';
 
 const initialState = {
-  issues: []
+  issues: null
 };
 
 export default function reducer(state = initialState, action) {
