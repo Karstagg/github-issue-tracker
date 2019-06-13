@@ -19,7 +19,7 @@ const Issue = (props) => {
   }
   return (
     <div>
-      <a style={{textDecoration: "none"}} href={issue.html_url}>
+      <a style={{textDecoration: "none"}} href={issue.html_url} target="_blank" rel="noopener noreferrer">
         <Card className="issue-card">
           <CardHeader className={issue.pull_request ? "pull" : issue.state}>{issue.number}</CardHeader>
           <CardBody>
