@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
-  src: url('../fonts/Montserrat-Regular.ttf');
-  src: url('../fonts/Montserrat-Bold.ttf');
-  src: url('../fonts/Montserrat-Light.ttf');
+  src: url('../fonts/Montserrat-Regular.woff2');
+  src: url('../fonts/Montserrat-Bold.woff2');
+  src: url('../fonts/Montserrat-Light.woff2');
 }
 
 html {
-  font-family: Montserrat default sans-serif;
+  font-family: 'Montserrat', default sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
