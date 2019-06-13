@@ -28,15 +28,10 @@ class Search extends Component {
         this.props.setIssues(response.data.items)
         this.setState({
           query: query,
-          issues: response.data.items,
           loading: ""
         });
       }).then(() => {
-        navigate('/issues/',
-          {
-            state: this.state
-          }
-        )
+        navigate('/issues/')
     })
       .catch(error => {
         console.log('Error fetching and parsing data', error);
