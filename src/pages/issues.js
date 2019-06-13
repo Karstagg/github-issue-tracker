@@ -26,15 +26,13 @@ export default class Issues extends Component {
           <div className="issues">
             <SEO title="issues"/>
             <div className="card-area">
-              <div>
+              <div className="row">
                 {this.state.issues.map((issue, index) => (
-
-                  <div className="card-container">
+                  <div key={index} className="card-container col-md-4">
                     <Issue issue={issue}/>
                   </div>
                 ))}
               </div>
-
             </div>
             <Link to="/">Go back to the homepage</Link>
           </div>

@@ -1,22 +1,25 @@
-import React from 'react';
-import { Card, Button, CardHeader, CardBody,
-  CardTitle, CardText } from 'reactstrap';
+import React from "react"
+import {
+  Card, CardHeader, CardBody,
+  CardTitle, CardText,
+} from "reactstrap"
+import { Link } from "gatsby"
 
 const Issue = (props) => {
-  let issue = props.issue;
-  console.log(props)
+  let issue = props.issue
+  console.log(issue.updated_at)
   return (
     <div>
-      <Card>
-        <CardHeader>{issue.number}</CardHeader>
-        <CardBody>
-          <CardTitle>{issue.title.substring(0,50) + "..."}</CardTitle>
-          <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-          <Button>Go somewhere</Button>
-        </CardBody>
-      </Card>
+      <Link to={"/"}>
+        <Card style={{height: 300}}>
+          <CardHeader>{issue.number}</CardHeader>
+          <CardBody>
+            <CardTitle>{issue.title.length > 200 ? issue.title.substring(0, 200) +  "..." : issue.title.substring(0, 200)}</CardTitle>
+          </CardBody>
+        </Card>
+      </Link>
     </div>
-  );
-};
+  )
+}
 
-export default Issue;
+export default Issue

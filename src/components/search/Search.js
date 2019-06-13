@@ -20,7 +20,7 @@ export default class Search extends Component {
   }
 
   search = (query = 'web') => {
-    axios.get(`https://api.github.com/search/issues?q=${query}`)
+    axios.get(`https://api.github.com/search/issues?q=${query}&sort=updated`)
       .then(response => {
         this.setState({
           query: query,

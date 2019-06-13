@@ -32,7 +32,8 @@ body {
   padding: 0px 1.0875rem 1.45rem;
 }
 .card-container {
-  max-width: 300px;
+  max-width: 400px;
+  height: 300px;
 }
 .card-title-custom {
   text-overflow: ellipsis;
