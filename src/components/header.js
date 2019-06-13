@@ -10,6 +10,7 @@ const Header = (props) => (
       height: 75,
       marginBottom: `1.45rem`,
     }}
+    className="header"
   >
     <div
       style={{

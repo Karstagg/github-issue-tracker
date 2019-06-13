@@ -27,7 +27,7 @@ const CardArea = (props) => {
         {
           issueArr.map((issue, index) => (
             <div key={index} className="card-container col-md-4">
-              <Issue issue={issue}/>
+              <Issue issueState={issueState} issue={issue}/>
             </div>
           ))
         }
