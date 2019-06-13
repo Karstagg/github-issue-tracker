@@ -1,20 +1,43 @@
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
-  src: url('../fonts/Montserrat-Regular.ttf');
-  src: url('../fonts/Montserrat-Bold.ttf');
-  src: url('../fonts/Montserrat-Light.ttf');
+  src: url('../fonts/Montserrat-Regular.woff2');
 }
+
+html {
+  font-family: 'Montserrat', default sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
-  font-family: 'Montserrat-Bold', Fallback, sans-serif;
+  font-family: 'Montserrat', Fallback, sans-serif;
 }
+
+.header {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.header-link {
+  position: absolute;
+  top: 3%;
+  right: 1%;
+}
+
 .search-form {
   width: 60%;
+  max-width: 500px;
 }
+
 .search-form input {
+  background: url(../icons/search.svg) no-repeat scroll 3px 8px;
+  background-size: 30px 30px;
+  background-color: white;
+  padding-left: 40px;
   width: 100%;
   height: 50px
 }
+
 .splash {
   background: #E91E63;
   color: #FFFFFF;
@@ -24,16 +47,82 @@ body {
   padding: 0px 1.0875rem 1.45rem;
   padding-top: 0;
 }
+
 .issues {
   background: #ffffff;
   color: black;
 }
+
 .card-area {
   padding: 0px 1.0875rem 1.45rem;
 }
+
 .card-container {
-  max-width: 300px;
+
+  max-width: 350px;
+  height: 300px;
+  text-decoration: none;
+  color: black;
 }
-.card-title-custom {
+
+.open {
+  background-color: #3f51b5 !important;
+  color: #ffffff;
+}
+
+.closed {
+  background-color: #3f51b5 !important;
+  color: #ffffff;
+  background: url(../icons/issue-closed.svg) no-repeat scroll 95% 10px;
+  background-size: 30px 30px;
+}
+
+.pull {
+  background-color: #3f51b5 !important;
+  color: #ffffff;
+  background: url(../icons/pull-request.svg) no-repeat scroll 95% 10px;
+  background-size: 30px 30px;
+}
+
+.issue-card {
+  height: 250px;
+  text-decoration: none;
+  color: black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-item {
+  font-size: 10px;
+  border: 1px solid #E91E63;
+  background-color: #E91E63;
+  color: #ffffff;
+  border-radius: 5px;
+  text-align: center;
   text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.toggle {
+  cursor: pointer;
+  border: none !important;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: #ffffff !important;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.on {
+  color: #E91E63;
+}
+
+.off {
+  color: black;
+}
+
+@media only screen and (max-width: 700px) {
+  .header-link {
+    display: none;
+  }
 }
