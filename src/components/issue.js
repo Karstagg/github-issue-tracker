@@ -3,7 +3,7 @@ import {
   Card, CardHeader, CardBody,
   CardTitle, CardFooter,
 } from "reactstrap"
-import { Link } from "gatsby"
+
 import CardItem from "./card-items"
 
 const Issue = (props) => {
@@ -19,7 +19,7 @@ const Issue = (props) => {
   }
   return (
     <div>
-      <Link style={{textDecoration: "none"}} to={"/"}>
+      <a style={{textDecoration: "none"}} href={issue.html_url} target="_blank" rel="noopener noreferrer">
         <Card className="issue-card">
           <CardHeader className={issue.pull_request ? "pull" : issue.state}>{issue.number}</CardHeader>
           <CardBody>
@@ -35,7 +35,7 @@ const Issue = (props) => {
             }
           </CardFooter>
         </Card>
-      </Link>
+      </a>
     </div>
   )
 }
