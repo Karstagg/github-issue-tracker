@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import SearchForm from "./SearchForm"
+import "../../css/styles.css"
+import { navigate } from "gatsby"
 
 export default class Search extends Component {
 
@@ -25,24 +27,22 @@ export default class Search extends Component {
           issues: response.data.items,
           loading: false
         });
-      })
+      }).then(() => {
+        navigate('/page-2/',
+          {
+            state: this.state
+          }
+        )
+    })
       .catch(error => {
         console.log('Error fetching and parsing data', error);
       });
   }
 
   render() {
-    console.log(this.state)
     return (
-      <div>
-        <div className="main-header">
-          <div className="inner">
+      <div className="search-form">
             <SearchForm onSearch={this.search} />
-          </div>
-        </div>
-        <div className="main-content">
-
-        </div>
       </div>
     );
   }

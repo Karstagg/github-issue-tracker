@@ -1,23 +1,36 @@
 import React from "react"
-import { Link } from "gatsby"
-
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 import Search from "../components/search/Search"
+import "bootstrap/dist/css/bootstrap.min.css"
+
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Search/>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+    <div className={"splash"}>
+    <SEO title="Home"/>
+    <h1 style={styles.mainContent}>Github Issue Viewer</h1>
+    <div style={styles.mainSearch}>
+      <Search/>
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    </div>
   </Layout>
 )
+
+const styles = {
+
+  mainContent: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingTop: "40vh"
+  },
+  mainSearch: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  }
+}
+
 
 export default IndexPage

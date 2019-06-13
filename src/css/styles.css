@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  src: url('../fonts/Montserrat-Regular.ttf');
+  src: url('../fonts/Montserrat-Bold.ttf');
+  src: url('../fonts/Montserrat-Light.ttf');
+}
+body {
+  font-family: 'Montserrat-Bold', Fallback, sans-serif;
+}
+.search-form {
+  width: 60%;
+}
+.search-form input {
+  width: 100%;
+  height: 50px
+}
+.splash {
+  background: #E91E63;
+  color: #FFFFFF;
+  margin: 0 auto;
+  max-width: 100%;
+  height: 100vh;
+  padding: 0px 1.0875rem 1.45rem;
+  padding-top: 0;
+}
+.issues {
+  background: #ffffff;
+  color: black;
+}
