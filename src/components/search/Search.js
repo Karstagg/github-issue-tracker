@@ -28,7 +28,7 @@ export default class Search extends Component {
           loading: false
         });
       }).then(() => {
-        navigate('/page-2/',
+        navigate('/issues/',
           {
             state: this.state
           }

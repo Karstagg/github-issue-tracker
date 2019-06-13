@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "github-issue-tracker",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "github issue tracker",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Matt Fisher",
   "dependencies": {
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
