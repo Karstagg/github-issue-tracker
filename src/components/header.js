@@ -2,31 +2,38 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({ siteTitle }) => (
+const Header = (props) => (
+
   <header
     style={{
-      background: `rebeccapurple`,
+      background: `#E91E63`,
+      height: 75,
       marginBottom: `1.45rem`,
     }}
+    className="header"
   >
     <div
       style={{
         margin: `0 auto`,
-        maxWidth: 960,
+        maxWidth: '100%',
         padding: `1.45rem 1.0875rem`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
+
+      <h1 style={{ position: "absolute", top: "0.5%" }}>
         <Link
           to="/"
           style={{
             color: `white`,
             textDecoration: `none`,
+            fontSize: 24,
           }}
         >
-          {siteTitle}
+          {props.siteTitle}
         </Link>
       </h1>
+      <a className="header-link" href={props.url}>{props.url}</a>
+
     </div>
   </header>
 )
@@ -36,7 +43,7 @@ Header.propTypes = {
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  siteTitle: `Github Issue Viewer`,
 }
 
 export default Header

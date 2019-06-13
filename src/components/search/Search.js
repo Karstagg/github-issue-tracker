@@ -13,7 +13,7 @@ class Search extends Component {
     super();
     this.state = {
       issues: [],
-      loading: true
+      loading: ""
     };
   }
 
@@ -22,13 +22,14 @@ class Search extends Component {
   }
 
   search = (query = 'web') => {
-    axios.get(`https://api.github.com/search/issues?q=${query}`)
+    this.setState({loading: "Loading..."})
+    axios.get(`https://api.github.com/search/issues?q=${query}&sort=updated`)
       .then(response => {
         this.props.setIssues(response.data.items)
         this.setState({
           query: query,
           issues: response.data.items,
-          loading: false
+          loading: ""
         });
       }).then(() => {
         navigate('/issues/',
@@ -46,6 +47,7 @@ class Search extends Component {
     return (
       <div className="search-form">
             <SearchForm onSearch={this.search} />
+        <h1 style={{textAlign: "center"}}>{this.state.loading}</h1>
       </div>
     );
   }
