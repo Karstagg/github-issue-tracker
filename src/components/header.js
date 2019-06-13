@@ -32,7 +32,7 @@ const Header = (props) => (
           {props.siteTitle}
         </Link>
       </h1>
-      <a style={{position: "absolute", top: "3%", right: "1%"}} href={props.url}>{props.url}</a>
+      <a className="header-link" href={props.url}>{props.url}</a>
 
     </div>
   </header>
